@@ -1,8 +1,8 @@
-function test(){
-    console.log("test");
-}
+// http://www.omdbapi.com/?apikey=603a192c&
 
+//http://www.omdbapi.com/?t=batman&y=2004
 
+// http://img.omdbapi.com/?apikey=603a192c&
 
 function makeRequest(method, url, body) {
 
@@ -28,18 +28,12 @@ function makeRequest(method, url, body) {
     
 }
 
-// http://www.omdbapi.com/?apikey=603a192c&
 
-//http://www.omdbapi.com/?t=batman&y=2004
-
-// http://img.omdbapi.com/?apikey=603a192c&
 
 const buttonClickSearchMovies = () => {
 
     sessionStorage.setItem('search',`http://www.omdbapi.com/?apikey=603a192c&s=${document.getElementById("searchTerm").value}`)
 
-    // console.log("test");
-    // return false;
      makeRequest("GET", sessionStorage.getItem('search'))
          .then((resolve) => {getMovies(resolve)})
          .catch(function (error) { console.log(error.message) })
