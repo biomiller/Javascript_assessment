@@ -53,26 +53,26 @@ function getMovies(input) {
 
         sessionStorage.setItem(('movie_'+i),(data[i].Title));
 
-        if (document.contains(document.getElementById("aMovieRow" + data[i].Title))) {
-            document.getElementById("moviesTable").removeChild(document.getElementById("aMovieRow" + data[i].Title));
+        if (document.contains(document.getElementById(i))) {
+            document.getElementById("moviesTable").removeChild(document.getElementById(i));
             }
 
         let newRow = document.createElement('TR');
 
-        newRow.id = "aMovieRow" + data[i].Title;
+        newRow.id = i;
 
         document.getElementById("moviesTable").appendChild(newRow);
 
         let td1 = document.createElement('TD');
-        document.getElementById("aMovieRow" + data[i].Title).appendChild(td1);
+        document.getElementById(i).appendChild(td1);
         td1.innerText = data[i].Title;
         
         let td2 = document.createElement('TD');
-        document.getElementById("aMovieRow" + data[i].Title).appendChild(td2);
+        document.getElementById(i).appendChild(td2);
         td2.innerText = data[i].Year;
         
         let td3 = document.createElement('TD');
-        document.getElementById("aMovieRow" + data[i].Title).appendChild(td3);
+        document.getElementById(i).appendChild(td3);
         td3.innerText = data[i].Type;
         
         let td4 = document.createElement('TD');
@@ -83,7 +83,7 @@ function getMovies(input) {
         moreButton.onclick=buttonMoreDetails;
         moreButton.innerText = "More Details";
         td4.appendChild(moreButton)
-        document.getElementById("aMovieRow" + data[i].Title).appendChild(td4);
+        document.getElementById(i).appendChild(td4);
 
     }
 
